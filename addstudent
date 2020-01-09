@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Adds new students to system
+
+for student in "$@"
+do
+	sudo adduser -gecos "" --disabled-password $student
+	echo ${student}:Password1 | sudo chpasswd
+	sudo chmod 751 /home/${student}
+done
