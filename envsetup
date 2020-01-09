@@ -97,9 +97,12 @@ sudo mv /tmp/fzf /usr/bin
 # Custom tools
 
 # addstudent
-cd /tmp && wget https://raw.githubusercontent.com/jncraton/ubuntu-server-student-setup/master/addstudent
-sudo chmod 755 /tmp/addstudent
-sudo mv /tmp/addstudent /usr/bin/
+for script in "addstudent" "envsetup"
+do
+  cd /tmp && wget https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master/$script
+  sudo chmod 755 /tmp/$script
+  sudo mv /tmp/$script /usr/bin/
+done
 
 # Configure home dir privacy
 chmod 750 $HOME

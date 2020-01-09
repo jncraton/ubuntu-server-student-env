@@ -9,15 +9,15 @@ Installation
 After a clean installation of Ubuntu Server, a new system can be configured by running the following as a sudoer:
 
 ```bash
-curl https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master/setup | bash
+curl https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master/envsetup | bash
 ```
 
 ### Install Details
 
-For a complete list of packages and tools that are available, view the `setup` script. There are a few flags provided to add packages that may be useful only in certain courses. Here's the complete usage that can be viewed by running `./setup -?`:
+For a complete list of packages and tools that are available, view the `setup` script. There are a few flags provided to add packages that may be useful only in certain courses. Here's the complete usage that can be viewed by running `envsetup -?`:
 
     SYNOPSIS
-    ./setup: [-lsd]
+    envsetup: [-lsd]
     
     DESCRIPTION
     
