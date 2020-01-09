@@ -1,5 +1,19 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
+  echo
+  echo "SYNOPSIS"
+  echo "$0 [student]..."
+  echo 
+  echo "DESCRIPTION"
+  echo 
+  echo "Adds new students to the system."
+  echo 
+  echo "This will create new users and home directories for each student. Accounts will be given a default password of Password1. Students will be prompted to change this password on first login."
+  echo 
+  exit 1
+fi
+
 # Adds new students to system
 
 for student in "$@"
