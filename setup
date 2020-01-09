@@ -26,3 +26,12 @@ sudo mv /tmp/micro-$micro_version/micro /usr/bin/
 rg_version="11.0.2"
 cd /tmp && wget https://github.com/BurntSushi/ripgrep/releases/download/$rg_version/ripgrep_${rg_version}_amd64.deb
 sudo dpkg -i /tmp/ripgrep_${rg_version}_amd64.deb
+
+# fd `find` replacement
+# There is a .deb for this, but it names the bin `fdfind` as `fd` is already taken by the fdclone package
+# We simply grab the binary and call it `fd`. This may cause breakage on systems using fdclone, but it
+# saves users from need to alias `fd` to `fdfind`
+fd_version="7.4.0"
+cd /tmp && wget https://github.com/sharkdp/fd/releases/download/v$fd_version/fd-v${fd_version}-x86_64-unknown-linux-gnu.tar.gz
+cd /tmp && tar -xvf  fd-v$fd_version-x86_64-unknown-linux-gnu.tar.gz
+sudo mv  fd-v$fd_version-x86_64-unknown-linux-gnu/fd /usr/bin/
