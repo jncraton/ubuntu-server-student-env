@@ -1,6 +1,8 @@
 dist: bionic
+before_script:
+  - sudo apt remove mongodb-org-server
 script:
   - ./envsetup
-  - ./envsetup -l
   - ./envsetup -s
   - ./envsetup -d
+  - ./envsetup -l
