@@ -2,17 +2,18 @@
 # This file is meant to be idempotent, so a newer version can be run on an existing system without issues
 
 editors="vim emacs nano"
+tools="tmux gdb"
 
 # Languages
 python="python3 python-pip"
-c="build-essential gdb"
+c="build-essential"
 js="nodejs npm"
 haskell="ghc"
 languages="$python $c $js $haskell"
 
 sudo apt --assume-yes update
 sudo apt --assume-yes remove snapd
-sudo apt --assume-yes install $editors $languages
+sudo apt --assume-yes install $editors $tools $languages
 
 # Tools not in repositories
 
@@ -35,3 +36,9 @@ fd_version="7.4.0"
 cd /tmp && wget https://github.com/sharkdp/fd/releases/download/v$fd_version/fd-v${fd_version}-x86_64-unknown-linux-gnu.tar.gz
 cd /tmp && tar -xvf  fd-v$fd_version-x86_64-unknown-linux-gnu.tar.gz
 sudo mv  fd-v$fd_version-x86_64-unknown-linux-gnu/fd /usr/bin/
+
+# fzf fuzzy finder
+fzf_version="0.20.0"
+cd /tmp && wget https://github.com/junegunn/fzf-bin/releases/download/$fzf_version/fzf-$fzf_version-linux_amd64.tgz
+cd /tmp && tar -xvf fzf-$fzf_version-linux_amd64.tgz
+sudo mv /tmp/fzf /usr/bin
