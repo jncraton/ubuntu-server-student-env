@@ -1,3 +1,6 @@
 dist: bionic
 script:
   - ./envsetup
+  - ./envsetup -l
+  - ./envsetup -s
+  - ./envsetup -d
