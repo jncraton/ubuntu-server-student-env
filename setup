@@ -21,3 +21,8 @@ micro_version="1.4.1"
 cd /tmp && wget https://github.com/zyedidia/micro/releases/download/v$micro_version/micro-$micro_version-linux64.tar.gz
 cd /tmp && tar -xvf /tmp/micro-$micro_version-linux64.tar.gz
 sudo mv /tmp/micro-$micro_version/micro /usr/bin/
+
+# ripgrep (rg)
+rg_version="11.0.2"
+cd /tmp && wget https://github.com/BurntSushi/ripgrep/releases/download/$rg_version/ripgrep_${rg_version}_amd64.deb
+sudo dpkg -i /tmp/ripgrep_${rg_version}_amd64.deb
