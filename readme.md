@@ -1,6 +1,8 @@
 Ubuntu Server Student Environment
 =================================
 
+[![Build Status](https://travis-ci.org/jncraton/ubuntu-server-student-env.svg?branch=master)](https://travis-ci.org/jncraton/ubuntu-server-student-env)
+
 Scripts and config files for configuring an Ubuntu server for multiuser student use.
 
 Installation
