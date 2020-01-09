@@ -1,0 +1,15 @@
+# Installs packages and configures system
+# This file is meant to be idempotent, so a newer version can be run on an existing system without issues
+
+editors="vim emacs nano"
+
+# Languages
+python="python3 python-pip"
+c="build-essential gdb"
+js="nodejs npm"
+haskell="ghc"
+languages="$python $c $js $haskell"
+
+sudo apt --assume-yes update
+sudo apt --assume-yes remove snapd
+sudo apt --assume-yes install $editors $languages
