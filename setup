@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Installs packages and configures system
 # This file is meant to be idempotent, so a newer version can be run on an existing system without issues
 
