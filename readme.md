@@ -10,7 +10,7 @@ After a clean installation of Ubuntu Server, a new system can be configured by r
 
 `curl https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master/setup | bash`
 
-For a complete list of packages and tools that are available, view the `setup` script.
+For a complete list of packages and tools that are available, view the `setup` script. By default, this includes a lot of programming languages. You may want to download and modify the setup script if these will not be needed.
 
 Adding Students
 ---------------
