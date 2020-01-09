@@ -16,7 +16,7 @@ curl https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master
 
 ### Install Details
 
-For a complete list of packages and tools that are available, view the `envsetup` script. There are a few flags provided to add packages that may be useful only in certain courses. Here's the complete usage that can be viewed by running `envsetup -?`:
+For a complete list of packages and tools that are available, view the `envsetup` script. There are a few flags provided to add packages that may be useful only in certain courses. Here's the complete usage:
 
     SYNOPSIS
     envsetup: [-lsd]
