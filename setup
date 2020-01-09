@@ -3,26 +3,52 @@
 # Installs packages and configures system
 # This file is meant to be idempotent, so a newer version can be run on an existing system without issues
 
+while getopts lsd name
+do
+    case $name in
+    l)    extra_langs=yes;;
+    s)    data_stores=yes;;
+    d)    data_science_langs=yes;;
+    ?)   printf "Usage: %s: [-lsd]\n" $0
+          exit 2;;
+    esac
+done
+
 editors="vim emacs nano"
-tools="git tmux gdb sqlite3 pandoc"
+
+# Tools
+tools="git tmux gdb pandoc"
+
+if [ -n "$data_stores" ]; then
+ tools="$tools postgresql postgresql-contrib sqlite3 mysql-server mongodb-server-core memcached"
+fi
 
 # Languages
 python="python3 python-pip"
 c="build-essential" # includes gcc, g++, and GNU make
 js="nodejs npm"
+languages="$c $python $js"
+
 r="r-base-core"
+
+if [ -n "$data_science" ]; then
+	languages="$languages $r"
+fi
+
 haskell="ghc"
 prolog="swi-prolog"
 algol="algol68g"
 lisp="gcl"
 scheme="mit-scheme"
 ml="smlnj"
-languages="$python $c $js $r $haskell $prolog $algol $lisp $scheme $ml"
+
+if [ -n "$extra_langs" ]; then
+	languages="$languages $haskell $prolog $algol $lisp $scheme $ml"
+fi
 
 sudo apt --assume-yes update
 sudo apt --assume-yes remove apparmor snapd
-sudo apt --assume-yes install $editors $tools $languages
-
+sudo apt --assume-yes install $editors $tools $languages || exit
 # Tools not in repositories
 
 # Micro text editor
