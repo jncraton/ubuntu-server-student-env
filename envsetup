@@ -64,7 +64,7 @@ fi
 
 sudo apt --assume-yes update
 sudo apt --assume-yes remove apparmor snapd
-sudo apt --assume-yes install $editors $tools $languages $server_apps || exit
+sudo apt --assume-yes install $editors $tools $languages $server_apps || exit 1
 
 # Tools not in repositories
 
@@ -72,12 +72,12 @@ sudo apt --assume-yes install $editors $tools $languages $server_apps || exit
 micro_version="1.4.1"
 cd /tmp && wget https://github.com/zyedidia/micro/releases/download/v$micro_version/micro-$micro_version-linux64.tar.gz
 cd /tmp && tar -xvf /tmp/micro-$micro_version-linux64.tar.gz
-sudo mv /tmp/micro-$micro_version/micro /usr/bin/
+sudo mv /tmp/micro-$micro_version/micro /usr/bin/ || exit 1
 
 # ripgrep (rg)
 rg_version="11.0.2"
 cd /tmp && wget https://github.com/BurntSushi/ripgrep/releases/download/$rg_version/ripgrep_${rg_version}_amd64.deb
-sudo dpkg -i /tmp/ripgrep_${rg_version}_amd64.deb
+sudo dpkg -i /tmp/ripgrep_${rg_version}_amd64.deb || exit 1
 
 # fd `find` replacement
 # There is a .deb for this, but it names the bin `fdfind` as `fd` is already taken by the fdclone package
@@ -86,13 +86,13 @@ sudo dpkg -i /tmp/ripgrep_${rg_version}_amd64.deb
 fd_version="7.4.0"
 cd /tmp && wget https://github.com/sharkdp/fd/releases/download/v$fd_version/fd-v${fd_version}-x86_64-unknown-linux-gnu.tar.gz
 cd /tmp && tar -xvf  fd-v$fd_version-x86_64-unknown-linux-gnu.tar.gz
-sudo mv  fd-v$fd_version-x86_64-unknown-linux-gnu/fd /usr/bin/
+sudo mv  fd-v$fd_version-x86_64-unknown-linux-gnu/fd /usr/bin/ || exit 1
 
 # fzf fuzzy finder
 fzf_version="0.20.0"
 cd /tmp && wget https://github.com/junegunn/fzf-bin/releases/download/$fzf_version/fzf-$fzf_version-linux_amd64.tgz
 cd /tmp && tar -xvf fzf-$fzf_version-linux_amd64.tgz
-sudo mv /tmp/fzf /usr/bin
+sudo mv /tmp/fzf /usr/bin || exit 1
 
 # Custom tools
 
@@ -101,8 +101,8 @@ for script in "addstudent" "envsetup"
 do
   cd /tmp && wget https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master/$script
   sudo chmod 755 /tmp/$script
-  sudo mv /tmp/$script /usr/bin/
+  sudo mv /tmp/$script /usr/bin/ || exit 1
 done
 
 # Configure home dir privacy
-chmod 750 $HOME
+chmod 750 $HOME || exit 1
