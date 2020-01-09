@@ -96,7 +96,6 @@ sudo mv /tmp/fzf /usr/bin || exit 1
 
 # Custom tools
 
-# addstudent
 for script in "addstudent" "envsetup"
 do
   cd /tmp && wget --no-verbose https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master/$script
