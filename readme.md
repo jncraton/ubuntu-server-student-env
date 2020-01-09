@@ -1,7 +1,7 @@
 Ubuntu Server Student Environment
 =================================
 
-Scripts and config files for configuring an Ubuntu server for multiuser student use
+Scripts and config files for configuring an Ubuntu server for multiuser student use.
 
 Installation
 ------------
