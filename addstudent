@@ -7,5 +7,6 @@ do
 	echo "Adding $student..."
 	sudo adduser -gecos "" --disabled-password --quiet $student
 	echo ${student}:Password1 | sudo chpasswd
+	sudo passwd --expire --quiet $student
 	sudo chmod 751 /home/${student}
 done

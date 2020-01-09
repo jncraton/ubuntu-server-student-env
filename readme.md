@@ -19,4 +19,4 @@ After successful installation, students can be added using the following command
 
 `addstudent alice bob charlie`
 
-This will create new users and home directories for each student. Accounts will be given a default password of Password1.
+This will create new users and home directories for each student. Accounts will be given a default password of Password1. Students will be prompted to change this password on first login.
