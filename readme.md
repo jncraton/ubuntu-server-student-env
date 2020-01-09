@@ -45,4 +45,6 @@ Here's the usage info for that command:
     
     Adds new students to the system.
     
-    This will create new users and home directories for each student. Accounts will be given a default password of Password1. Students will be prompted to change this password on first login.
+    This will create new users and home directories for each student. Accounts 
+    will be given a default password of Password1. Students will be prompted 
+    to change this password on first login.
