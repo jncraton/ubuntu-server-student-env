@@ -4,7 +4,8 @@
 
 for student in "$@"
 do
-	sudo adduser -gecos "" --disabled-password $student
+	echo "Adding $student..."
+	sudo adduser -gecos "" --disabled-password --quiet $student
 	echo ${student}:Password1 | sudo chpasswd
 	sudo chmod 751 /home/${student}
 done
