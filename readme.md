@@ -45,7 +45,7 @@ For example:
 Here's the usage info for that command:
 
     SYNOPSIS
-    ./addstudent [student]...
+    addstudent [student]...
     
     DESCRIPTION
     
