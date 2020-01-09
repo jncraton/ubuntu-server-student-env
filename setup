@@ -20,7 +20,7 @@ ml="smlnj"
 languages="$python $c $js $r $haskell $prolog $algol $lisp $scheme $ml"
 
 sudo apt --assume-yes update
-sudo apt --assume-yes remove snapd
+sudo apt --assume-yes remove apparmor snapd
 sudo apt --assume-yes install $editors $tools $languages
 
 # Tools not in repositories
