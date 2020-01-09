@@ -2,7 +2,7 @@
 # This file is meant to be idempotent, so a newer version can be run on an existing system without issues
 
 editors="vim emacs nano"
-tools="tmux gdb"
+tools="git tmux gdb sqlite3 pandoc"
 
 # Languages
 python="python3 python-pip"
