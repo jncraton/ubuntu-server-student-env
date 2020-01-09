@@ -14,8 +14,6 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-# Adds new students to system
-
 for student in "$@"
 do
 	echo "Adding $student..."
