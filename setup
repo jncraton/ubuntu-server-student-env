@@ -13,3 +13,11 @@ languages="$python $c $js $haskell"
 sudo apt --assume-yes update
 sudo apt --assume-yes remove snapd
 sudo apt --assume-yes install $editors $languages
+
+# Tools not in repositories
+
+# Micro text editor
+micro_version="1.4.1"
+cd /tmp && wget https://github.com/zyedidia/micro/releases/download/v$micro_version/micro-$micro_version-linux64.tar.gz
+cd /tmp && tar -xvf /tmp/micro-$micro_version-linux64.tar.gz
+sudo mv /tmp/micro-$micro_version/micro /usr/bin/
