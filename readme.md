@@ -12,18 +12,18 @@ After a clean installation of Ubuntu Server, a new system can be configured by r
 
 For a complete list of packages and tools that are available, view the `setup` script. There are a few flags provided to add packages that may be useful only in certain courses. Here's the complete usage that can be viewed by running `./setup -?`:
 
-  SYNOPSIS
-  ./setup: [-lsd]
-  
-  DESCRIPTION
-  
-  Installs packages and configures system
-  
-    -l Include uncommon programming languages
-    -s Include data stores
-    -d Include data science tools and languages
-  
-  This program is idempotent, so a newer version can be run on an existing system without issues.
+    SYNOPSIS
+    ./setup: [-lsd]
+    
+    DESCRIPTION
+    
+    Installs packages and configures system
+    
+      -l Include uncommon programming languages
+      -s Include data stores
+      -d Include data science tools and languages
+    
+    This program is idempotent, so a newer version can be run on an existing system without issues.
 
 Adding Students
 ---------------
