@@ -4,4 +4,4 @@ Scripts and config files for configuring an Ubuntu server for multiuser student 
 
 A new system can be configured by running:
 
-`curl https://raw.githubusercontent.com/jncraton/ubuntu-server-student-setup/master/setup | bash`
+`curl https://raw.githubusercontent.com/jncraton/ubuntu-server-student-env/master/setup | bash`
