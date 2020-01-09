@@ -8,10 +8,16 @@ tools="git tmux gdb sqlite3 pandoc"
 
 # Languages
 python="python3 python-pip"
-c="build-essential"
+c="build-essential" # includes gcc, g++, and GNU make
 js="nodejs npm"
+r="r-base-core"
 haskell="ghc"
-languages="$python $c $js $haskell"
+prolog="swi-prolog"
+algol="algol68g"
+lisp="gcl"
+scheme="mit-scheme"
+ml="smlnj"
+languages="$python $c $js $r $haskell $prolog $algol $lisp $scheme $ml"
 
 sudo apt --assume-yes update
 sudo apt --assume-yes remove snapd
