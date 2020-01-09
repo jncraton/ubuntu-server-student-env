@@ -43,5 +43,12 @@ cd /tmp && wget https://github.com/junegunn/fzf-bin/releases/download/$fzf_versi
 cd /tmp && tar -xvf fzf-$fzf_version-linux_amd64.tgz
 sudo mv /tmp/fzf /usr/bin
 
+# Custom tools
+
+# addstudent
+cd /tmp && wget https://raw.githubusercontent.com/jncraton/ubuntu-server-student-setup/master/addstudent
+sudo chmod 755 /tmp/addstudent
+sudo mv /tmp/addstudent /usr/bin/
+
 # Configure home dir privacy
 chmod 750 $HOME
