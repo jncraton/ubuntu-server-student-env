@@ -44,13 +44,15 @@ fi
 python="python3 python-pip"
 c="build-essential" # includes gcc, g++, and GNU make
 js="nodejs npm"
-r="r-base-core"
+rust="rustc cargo"
+go="golang"
 haskell="ghc"
 prolog="swi-prolog"
 algol="algol68g"
 lisp="gcl"
 scheme="mit-scheme"
 ml="smlnj"
+r="r-base-core"
 
 languages="$c $python $js"
 
@@ -59,7 +61,7 @@ if [ -n "$data_science" ]; then
 fi
 
 if [ -n "$extra_langs" ]; then
-	languages="$languages $haskell $prolog $algol $lisp $scheme $ml"
+	languages="$languages $rust $go $haskell $prolog $algol $lisp $scheme $ml"
 fi
 
 sudo apt --quiet --assume-yes update
