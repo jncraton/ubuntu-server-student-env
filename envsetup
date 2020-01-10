@@ -31,7 +31,7 @@ done
 editors="vim emacs nano"
 
 # Tools
-tools="git tmux gdb pandoc"
+tools="git tmux gdb pandoc fish zsh"
 
 # Server Applications
 server_apps=""
