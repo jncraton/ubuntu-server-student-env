@@ -12,18 +12,20 @@ usage() {
   echo "  -l Include uncommon programming languages"
   echo "  -s Include data stores"
   echo "  -d Include data science tools and languages"
+  echo "  -w Include Windows (smb) shares for home directories"
   echo 
   echo "This program is idempotent, so a newer version can be run on an existing system without issues."
   echo
   exit 1
 }
 
-while getopts lsd name
+while getopts lsdw name
 do
     case $name in
     l)    extra_langs=yes;;
     s)    data_stores=yes;;
     d)    data_science_langs=yes;;
+    w)    windows_shares=yes;;
     *)    usage;;
     esac
 done
@@ -64,9 +66,20 @@ if [ -n "$extra_langs" ]; then
 	languages="$languages $rust $go $haskell $prolog $algol $lisp $scheme $ml"
 fi
 
+if [ -n "$windows_shares" ]; then
+	server_apps="$server_apps samba samba-common python-glade2 system-config-samba"
+fi
+
 sudo apt --quiet --assume-yes update
 sudo apt -qq --assume-yes remove apparmor snapd
 sudo apt --quiet --assume-yes install $editors $tools $languages $server_apps || exit 1
+
+# System Configuration
+
+if [ -n "$windows_shares" ]; then
+	sudo cp -f smb.conf /etc/samba/smb.conf
+	sudo systemctl restart smbd.service
+fi
 
 # Tools not in repositories
 
